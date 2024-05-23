@@ -15,24 +15,43 @@ For each of the queries output the corresponding answer.
 
 #### Input
 5 5
+
 1 2 3 4 5
+
 0
+
 1
+
 2
+
 3
+
 4
+
 
 #### Output
+
 4
-3
-2
-2
+
 3
 
+2
+
+2
+
+3
+
+
 The max OR posible is 7 which is achieved in the following ways for the given queries:
+
 1 | 2 | 3 | 4 
+
 2 | 3 | 4
+
 3 | 4 
+
 3 | 4
+
 3 | 4 | 5
+
 
