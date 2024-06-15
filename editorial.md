@@ -1,0 +1,7 @@
+Using brute force for each query would have a time complexity of $O(n)$ and hence would exceed the time limit. Since bitwise OR is an increasing function, we then think of _binary search._
+
+Given the index $k$, using binary search, we could find the **minimum** index $r$ $(k<=r<=n-1)$ such that the bitwise OR of elements in the range $[k, r]$ is the maximum possible bitwise OR obtainable considering the range $[k, n-1]$. This would give us the right end index $r$ of required subarray. We could follow a similar approach for the left index $l$ $(0<=l<=k)$where we find the **maximum** index $l$ such that the bitwise OR of the elements in the range $[l, r]$ is the maximum possible bitwise OR of the array. We should also consider the case where we find the left end index first and accordingly find the right end index, then we take the minimum of the two lengths of the the subarrays.
+
+To perform binary search, we would need to find the bitwise OR of elements between any two indices in the order of $O(1)$. We could do this using _dynamic programming._ We create a 2D array of maximum dimensions $n * 32$ where $dp[i][j]$ stores the number of set bits of the element $a_i$ till the $j$-th bit. Given two indices $l$ and $r$, we could iterate over $dp[l]$ and $dp[r]$ to find if a bit is set between the given range. This way we could find the bitwise OR between two indices with a time complexity of $O(32)$.
+
+The overall time complexity for each query then boils down to $O(32 * log(n))$ which should pass all the test cases.
